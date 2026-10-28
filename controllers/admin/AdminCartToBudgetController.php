@@ -610,15 +610,41 @@ class AdminCartToBudgetController extends ModuleAdminController
 
         if (Tools::strlen($query) >= 2) {
             foreach ((array) Customer::searchByName($query, 20) as $customer) {
-                $results[] = [
-                    'id' => (int) $customer['id_customer'],
-                    'name' => $customer['firstname'] . ' ' . $customer['lastname'],
-                    'email' => $customer['email'],
-                    'company' => isset($customer['company']) ? $customer['company'] : '',
-                ];
+                $results[] = $this->formatCustomerResult($customer);
             }
         }
 
         die(json_encode(['results' => $results]));
+    }
+    /**
+     * Customer data used to prefill the recipient fields of the budget if customer selected.
+     */
+    protected function formatCustomerResult(array $customer)
+    {
+        $result = [
+            'id' => (int) $customer['id_customer'],
+            'name' => $customer['firstname'] . ' ' . $customer['lastname'],
+            'email' => (string) $customer['email'],
+            'company' => isset($customer['company']) ? (string) $customer['company'] : '',
+            'vat' => '',
+            'address' => '',
+        ];
+
+        $id_address = (int) Address::getFirstCustomerAddressId((int) $customer['id_customer']);
+        if ($id_address) {
+            $address = new Address($id_address);
+            if (Validate::isLoadedObject($address)) {
+                $result['vat'] = (string) ($address->vat_number ?: $address->dni);
+                $result['company'] = $result['company'] ?: (string) $address->company;
+                $result['address'] = AddressFormat::generateAddress(
+                    $address,
+                    ['avoid' => ['firstname', 'lastname', 'company', 'vat_number', 'dni']],
+                    "\n",
+                    ' '
+                );
+            }
+        }
+
+        return $result;
     }
 }
