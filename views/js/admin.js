@@ -113,14 +113,14 @@
         selected.querySelector('.ctb-selected-label').textContent = c.name + ' <' + c.email + '>';
         selected.classList.remove('hidden');
         document.getElementById('ctb-customer-search').value = '';
-        var email = editor.querySelector('input[name="recipient_email"]');
-        if (email && !email.value) {
-          email.value = c.email;
-        }
-        var company = editor.querySelector('input[name="recipient_company"]');
-        if (company && !company.value && c.company) {
-          company.value = c.company;
-        }
+        // Pre rellenamos los campos con los datos del cliente seleccionado
+        var fill = { recipient_name: c.name, recipient_company: c.company, recipient_email: c.email, recipient_vat: c.vat, recipient_address: c.address };
+        Object.keys(fill).forEach(function (name) {
+          var field = editor.querySelector('[name="' + name + '"]');
+          if (field && !field.value.trim() && fill[name]) {
+            field.value = fill[name];
+          }
+        });
       }
     });
 
