@@ -46,13 +46,18 @@
                        placeholder="{l s='Search by name or e-mail (optional)' mod='carttobudget'}">
                 <div class="ctb-results" id="ctb-customer-results"></div>
               </div>
-              <p class="help-block">{l s='Optional. Budgets assigned to a customer also appear in their account.' mod='carttobudget'}</p>
+              <p class="help-block">{l s='Optional. Leave it empty to create the budget without a customer and type the recipient data below. If you choose a customer, their data is copied below and you can still edit it.' mod='carttobudget'}</p>
+              <p class="help-block">{l s='Budgets assigned to a customer also appear in their account.' mod='carttobudget'}</p>
               {if $ctb_customer && !$ctb_customer.access}
                 <p class="help-block text-warning"><i class="icon-warning"></i> {l s='This customer cannot save carts, but will still see the budgets assigned by the shop.' mod='carttobudget'}</p>
               {/if}
             </div>
           </div>
-
+          <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-4">
+              <h4 class="ctb-recipient-title">{l s='Recipient data (printed on the budget)' mod='carttobudget'}</h4>
+            </div>
+          </div>
           <div class="form-group">
             <label class="control-label col-lg-4">{l s='Recipient name' mod='carttobudget'}</label>
             <div class="col-lg-8"><input type="text" name="recipient_name" maxlength="255" value="{$ctb_object->recipient_name|escape:'html':'UTF-8'}"></div>
