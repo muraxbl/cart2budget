@@ -72,7 +72,7 @@ class CartToBudgetCart extends ObjectModel
             'recipient_address' => ['type' => self::TYPE_STRING, 'validate' => 'isCleanHtml'],
             'notes' => ['type' => self::TYPE_STRING, 'validate' => 'isCleanHtml'],
             'template' => ['type' => self::TYPE_STRING, 'validate' => 'isModuleName', 'size' => 64],
-            'token' => ['type' => self::TYPE_STRING, 'validate' => 'isAlphaNumeric', 'size' => 32],
+            'token' => ['type' => self::TYPE_STRING, 'validate' => 'isMd5', 'size' => 32],
             'share_active' => ['type' => self::TYPE_BOOL, 'validate' => 'isBool'],
             'valid_until' => ['type' => self::TYPE_DATE, 'validate' => 'isDate', 'allow_null' => true],
             'total_tax_excl' => ['type' => self::TYPE_FLOAT, 'validate' => 'isFloat'],
@@ -132,7 +132,7 @@ class CartToBudgetCart extends ObjectModel
             if (function_exists('random_bytes')) {
                 $token = bin2hex(random_bytes(16));
             } else {
-                $token = Tools::strtolower(Tools::passwdGen(32, 'ALPHANUMERIC'));
+                $token = md5(uniqid((string) mt_rand(), true));
             }
         } while (self::getIdByToken($token));
 
@@ -141,7 +141,7 @@ class CartToBudgetCart extends ObjectModel
 
     public static function getIdByToken($token)
     {
-        if (!is_string($token) || !preg_match('/^[a-zA-Z0-9]{32}$/', $token)) {
+        if (!is_string($token) || !Validate::isMd5($token)) {
             return 0;
         }
 
