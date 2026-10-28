@@ -46,3 +46,4 @@
 #ctb-editor .ctb-grand-total td { font-size: 1.25em; font-weight: 700; border-top: 2px solid #363a41; }
 #ctb-editor .ctb-inline-actions .btn { margin: 4px 4px 0 0; }
 #ctb-editor .ctb-pdf-form label { display: block; }
+#ctb-editor .ctb-recipient-title { margin: 10px 0 0; padding-bottom: 4px; border-bottom: 1px solid #eee; font-size: 13px; color: #6c868e; }
