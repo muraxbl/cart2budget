@@ -15,7 +15,7 @@ La instalación crea tres tablas (`carttobudget_cart`, `carttobudget_cart_line`,
 
 ### Migración desde el módulo anterior de carritos guardados
 
-Si existen las tablas `saved_carts` y `saved_cart_rule` del módulo anterior, la página de configuración muestra el botón **Importar carritos**. Copia los carritos (con sus líneas, convirtiendo los precios guardados con IVA a precio sin IVA + tipo) sin tocar las tablas antiguas. Después puedes desinstalar el módulo antiguo.
+Se retira la migración desde versión anterior al carecer de efectos prácticos en ninguna instalacion nueva.
 
 ## Funcionamiento
 
