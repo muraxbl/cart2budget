@@ -1,0 +1,48 @@
+/* CartToBudget - back office */
+#ctb-editor .ctb-search-wrapper { position: relative; }
+#ctb-editor .ctb-results {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #c7d6db;
+    border-top: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+#ctb-editor .ctb-results.open { display: block; }
+#ctb-editor .ctb-result {
+    display: block;
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+    color: #363a41;
+    cursor: pointer;
+}
+#ctb-editor .ctb-result:hover,
+#ctb-editor .ctb-result.active { background: #e8f4f8; text-decoration: none; }
+#ctb-editor .ctb-result small { color: #6c868e; }
+#ctb-editor .ctb-result .ctb-result-price { float: right; font-weight: 600; }
+#ctb-editor .ctb-result.inactive { opacity: .6; }
+#ctb-editor .ctb-selected {
+    margin-bottom: 6px;
+    padding: 6px 10px;
+    background: #f0f8eb;
+    border: 1px solid #c8e3b5;
+    border-radius: 3px;
+}
+#ctb-editor .ctb-selected a { float: right; color: #c45c5c; }
+#ctb-editor .ctb-lines td { vertical-align: middle; }
+#ctb-editor .ctb-thumb { width: 75px; white-space: nowrap; }
+#ctb-editor .ctb-move { display: inline-block; vertical-align: middle; margin-right: 4px; }
+#ctb-editor .ctb-move a { display: block; line-height: 1; color: #6c868e; }
+#ctb-editor .ctb-input-qty { width: 70px; display: inline-block; text-align: center; }
+#ctb-editor .ctb-input-num { width: 100px; display: inline-block; text-align: right; }
+#ctb-editor .ctb-input-pct { width: 65px; display: inline-block; text-align: right; }
+#ctb-editor .ctb-mt { margin-top: 4px; }
+#ctb-editor .ctb-totals .ctb-tax-row td { color: #6c868e; }
+#ctb-editor .ctb-grand-total td { font-size: 1.25em; font-weight: 700; border-top: 2px solid #363a41; }
+#ctb-editor .ctb-inline-actions .btn { margin: 4px 4px 0 0; }
+#ctb-editor .ctb-pdf-form label { display: block; }

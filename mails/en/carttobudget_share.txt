@@ -1,0 +1,15 @@
+Hello {recipient_name},
+
+Please find below the budget we have prepared for you.
+
+{message_txt}
+
+Budget: {budget_reference} - {budget_name}
+Total (tax incl.): {budget_total}
+Valid until: {budget_valid_until}
+
+View budget: {budget_url}
+Download PDF: {budget_pdf_url}
+
+Kind regards,
+{shop_name} - {shop_url}

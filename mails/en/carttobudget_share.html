@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{shop_name} - Budget</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f5f7;font-family:Arial,Helvetica,sans-serif;color:#333333;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f5f7;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:6px;">
+          <tr>
+            <td align="center" style="padding:24px;border-bottom:1px solid #eeeeee;">
+              <a href="{shop_url}" style="text-decoration:none;"><img src="{shop_logo}" alt="{shop_name}" style="max-width:200px;border:0;"></a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px;font-size:14px;line-height:1.6;">
+              <p style="margin:0 0 16px;font-size:18px;font-weight:bold;">Hello {recipient_name},</p>
+              <p style="margin:0 0 16px;">Please find below the budget we have prepared for you. You can view it online, download it as PDF and add it to your cart in one click.</p>
+              {message}
+              <table role="presentation" width="100%" cellpadding="6" cellspacing="0" style="margin:0 0 20px;font-size:14px;border:1px solid #eeeeee;">
+                <tr><td style="color:#777777;">Budget:</td><td><strong>{budget_reference}</strong> - {budget_name}</td></tr>
+                <tr><td style="color:#777777;">Total (tax incl.):</td><td><strong>{budget_total}</strong></td></tr>
+                <tr><td style="color:#777777;">Valid until:</td><td>{budget_valid_until}</td></tr>
+              </table>
+              <p style="margin:0 0 12px;text-align:center;">
+                <a href="{budget_url}" style="display:inline-block;padding:12px 24px;background-color:#1f3a5f;color:#ffffff;text-decoration:none;border-radius:4px;font-weight:bold;">View budget</a>
+              </p>
+              <p style="margin:0 0 16px;text-align:center;font-size:12px;"><a href="{budget_pdf_url}" style="color:#1f3a5f;">Download PDF</a></p>
+              <p style="margin:0;">Kind regards,<br>{shop_name}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Hola {recipient_name},
+
+Te enviamos el presupuesto que hemos preparado para ti.
+
+{message_txt}
+
+Presupuesto: {budget_reference} - {budget_name}
+Total (IVA incl.): {budget_total}
+Válido hasta: {budget_valid_until}
+
+Ver presupuesto: {budget_url}
+Descargar PDF: {budget_pdf_url}
+
+Un saludo,
+{shop_name} - {shop_url}

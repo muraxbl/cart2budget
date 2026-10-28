@@ -1,0 +1,189 @@
+/* CartToBudget - front office (all selectors are prefixed to avoid theme conflicts) */
+
+/* Save box on the cart page */
+.ctb-save-box {
+    margin: 1rem 0;
+    padding: 1.25rem 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+}
+.ctb-save-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 .25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+}
+.ctb-save-text { margin-bottom: .75rem; font-size: .875rem; color: #6c757d; }
+.ctb-save-form { display: flex; gap: .5rem; margin-bottom: .75rem; }
+.ctb-save-form input { flex: 1; min-width: 0; }
+.ctb-save-form .btn { white-space: nowrap; text-transform: none; }
+.ctb-view-carts { font-size: .875rem; }
+
+/* My saved carts */
+.ctb-cart {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: box-shadow .3s ease;
+}
+.ctb-cart:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, .08); }
+.ctb-cart-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.ctb-cart-title { display: flex; align-items: center; gap: .5rem; margin: 0 0 .25rem; font-size: 1.1rem; }
+.ctb-cart-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; font-size: .85rem; color: #6c757d; }
+.ctb-cart-total { text-align: right; }
+.ctb-cart-total-label { display: block; font-size: .8rem; color: #6c757d; }
+.ctb-cart-total strong { font-size: 1.25rem; }
+.ctb-cart-lines {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: .75rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+.ctb-cart-line {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .5rem;
+    background: #fafafa;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+}
+.ctb-cart-line img,
+.ctb-no-image {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.ctb-no-image { display: flex; align-items: center; justify-content: center; background: #eee; color: #aaa; }
+.ctb-cart-line-info { display: flex; flex-direction: column; font-size: .85rem; line-height: 1.3; }
+.ctb-cart-line-name { font-weight: 600; }
+.ctb-cart-line-info small { color: #6c757d; }
+.ctb-cart-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .5rem; }
+.ctb-cart-actions .btn { display: inline-flex; align-items: center; gap: .25rem; text-transform: none; }
+.ctb-cart-actions .material-icons { font-size: 1.1rem; }
+.ctb-share { display: flex; flex: 1 1 260px; gap: .25rem; }
+.ctb-share input { font-size: .8rem; }
+.ctb-empty { padding: 3rem 1rem; text-align: center; }
+.ctb-empty > .material-icons { font-size: 4rem; color: #ced4da; }
+.ctb-limits { margin-top: 1rem; font-size: .85rem; color: #6c757d; text-align: center; }
+.ctb-badge {
+    display: inline-block;
+    padding: .15rem .5rem;
+    font-size: .75rem;
+    border-radius: 10px;
+    background: #e9ecef;
+    color: #495057;
+}
+.ctb-badge-success { background: #d4edda; color: #155724; }
+.ctb-badge-warning { background: #fff3cd; color: #856404; }
+.ctb-badge-danger { background: #f8d7da; color: #721c24; }
+.ctb-badge-info { background: #d1ecf1; color: #0c5460; }
+
+/* Public budget page */
+.ctb-budget { background: #fff; }
+.ctb-budget-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.5rem; }
+.ctb-budget-shop { display: flex; gap: 1rem; align-items: flex-start; }
+.ctb-budget-logo { max-height: 70px; max-width: 200px; }
+.ctb-budget-shop-data { font-size: .875rem; }
+.ctb-budget-data { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; margin: 0; font-size: .9rem; }
+.ctb-budget-data dt { font-weight: 600; color: #6c757d; }
+.ctb-budget-data dd { margin: 0; }
+.ctb-budget-table td { vertical-align: middle; }
+.ctb-budget-thumb { width: 70px; }
+.ctb-budget-thumb img { width: 56px; height: 56px; object-fit: cover; border-radius: 4px; }
+.ctb-budget-table .ctb-unavailable { opacity: .6; }
+.ctb-budget-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
+.ctb-budget-notes { flex: 1 1 300px; }
+.ctb-budget-summary { flex: 0 1 380px; width: 100%; }
+.ctb-budget-summary .table { margin-bottom: .5rem; }
+.ctb-taxes { font-size: .875rem; }
+.ctb-grand-total td { font-size: 1.2rem; font-weight: 700; border-top: 2px solid #333 !important; }
+.ctb-budget-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 1rem; margin: 1.5rem 0; }
+.ctb-budget-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0; }
+.ctb-budget-actions select { width: auto; }
+.ctb-budget-actions .btn { display: inline-flex; align-items: center; gap: .35rem; }
+.ctb-replace { margin: 0; font-size: .875rem; }
+.ctb-budget-footer { margin-top: 1rem; font-size: .8rem; color: #6c757d; }
+
+@media (max-width: 767px) {
+    .ctb-cart-total { text-align: left; }
+    .ctb-cart-actions { justify-content: stretch; }
+    .ctb-cart-actions .btn { flex: 1 1 calc(50% - .5rem); justify-content: center; }
+    .ctb-budget-table thead { display: none; }
+    .ctb-budget-table tr { display: block; padding: .5rem 0; border-bottom: 1px solid #dee2e6; }
+    .ctb-budget-table td { display: flex; justify-content: space-between; border: 0; padding: .2rem .5rem; text-align: right; }
+    .ctb-budget-table td[data-label]::before { content: attr(data-label); font-weight: 600; color: #6c757d; text-align: left; }
+    .ctb-budget-thumb { display: none !important; }
+}
+
+/* Notifications */
+.ctb-popups { position: fixed; top: 90px; right: 20px; z-index: 9999; width: 350px; max-width: calc(100% - 40px); }
+.ctb-popup {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: #fff;
+    border-left: 4px solid #4caf50;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all .3s ease;
+}
+.ctb-popup.ctb-show { opacity: 1; transform: translateX(0); }
+.ctb-popup-error { border-left-color: #f44336; }
+.ctb-popup-warning { border-left-color: #ff9800; }
+.ctb-popup-body { display: flex; gap: 12px; padding: 16px; }
+.ctb-popup-icon { width: 30px; font-size: 24px; font-weight: 700; text-align: center; color: #4caf50; }
+.ctb-popup-error .ctb-popup-icon { color: #f44336; }
+.ctb-popup-warning .ctb-popup-icon { color: #ff9800; }
+.ctb-popup-text { flex: 1; }
+.ctb-popup-title { margin-bottom: 4px; font-size: 14px; font-weight: 600; color: #333; }
+.ctb-popup-message { font-size: 13px; line-height: 1.4; color: #666; }
+.ctb-popup-details { margin-top: 4px; font-size: 12px; font-style: italic; color: #888; }
+.ctb-popup-close { padding: 4px; background: none; border: 0; font-size: 18px; line-height: 1; color: #999; cursor: pointer; }
+.ctb-popup-progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: currentColor; animation: ctb-progress 4s linear forwards; color: #4caf50; }
+.ctb-popup-error .ctb-popup-progress { color: #f44336; }
+.ctb-popup-warning .ctb-popup-progress { color: #ff9800; }
+@keyframes ctb-progress { from { width: 100%; } to { width: 0; } }
+
+/* Confirmation dialog */
+.ctb-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+.ctb-dialog-overlay.ctb-show { opacity: 1; }
+.ctb-dialog {
+    width: 90%;
+    max-width: 380px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
+    text-align: center;
+    transform: scale(.8);
+    transition: transform .3s ease;
+}
+.ctb-dialog-overlay.ctb-show .ctb-dialog { transform: scale(1); }
+.ctb-dialog-icon { margin-bottom: 12px; font-size: 44px; color: #ff9800; }
+.ctb-dialog-error .ctb-dialog-icon { color: #f44336; }
+.ctb-dialog-message { margin-bottom: 8px; font-size: 16px; color: #333; }
+.ctb-dialog-details { padding: 10px; font-size: 14px; color: #666; background: #f8f9fa; border-radius: 4px; }
+.ctb-dialog-buttons { display: flex; justify-content: center; gap: .5rem; margin-top: 20px; }
+.ctb-dialog-buttons .btn { min-width: 100px; text-transform: none; }
